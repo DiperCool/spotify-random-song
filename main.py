@@ -1,12 +1,14 @@
 import spotipy
 import telebot
 import random
+import logging
 from spotipy.oauth2 import SpotifyClientCredentials
 SPOTIPY_CLIENT_ID='0893cd74f2c04be7943175ae4e22b324'
 SPOTIPY_CLIENT_SECRET='3b04df03d96844f0b3baa1d437208c5e'
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET))
-bot = telebot.TeleBot("2028326045:AAGsPzZnIFNTFqdLY_nbmMeUlhVCRRDhiVY")
-
+bot = telebot.TeleBot("2049038003:AAEjwRQbhuiWrb6uDxjlRCcDpwaoJh0f8jI")
+logger = telebot.logger
+telebot.logger.setLevel(logging.DEBUG) 
 
 def has_list_item(list, item_search):
     for item in list:
